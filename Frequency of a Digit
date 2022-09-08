@@ -1,0 +1,38 @@
+Problem Description:
+
+Write a program to find the frequency of digit 1 in a given integer A.
+
+Input Format:
+
+The first line indicates the number of the test cases
+For each testcase a line contains an integer A.
+Output Format:
+
+The frequency of digit 1 in integer format in a new line for each testcase.
+
+Sample Input:
+
+1
+121234
+Sample Output:
+
+2
+Sample Explanation:
+
+As the number 121234 has 1 at 1st and 3rd position therefore answer is 2.
+
+Solution:
+
+def frequency(n):
+    count=0
+    '''input: n = A single integer
+       output: Frequency of 1 in n is to be returned by storing the frequency in count variable'''
+    # YOUR CODE GOES HERE
+
+    while n!=0:
+        rem = n%10
+        if rem ==1:
+            count = count+1
+        n = n//10
+
+    return count
