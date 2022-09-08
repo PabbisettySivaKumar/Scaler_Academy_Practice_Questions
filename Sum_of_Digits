@@ -1,0 +1,34 @@
+Problem Description:
+
+You have been given a number. Write a program to calculate and print the sum of the digits of the given number.
+
+Input Format:
+
+The number is given in integer format.
+Output Format:
+
+The sum in integer format
+Sample Input:
+
+3124
+Sample Output:
+
+10
+Sample explanation:
+
+The sum of digits in 3124 is 3+1+2+4 = 10
+
+
+Solution:
+
+
+n = int(input())
+ans = 0
+#Print the sum of digits
+
+#YOUR CODE GOES HERE 
+while n!=0:
+    rem = n%10
+    ans = ans+rem
+    n = n//10
+print(ans)
