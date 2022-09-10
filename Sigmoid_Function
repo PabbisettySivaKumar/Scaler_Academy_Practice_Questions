@@ -1,0 +1,46 @@
+Problem Description:
+
+You have been given 5 numbers w0, w1, w2, x0, x1. You are also given the function: y = w0 + w1 * x0 + w2 * x1.
+
+Now you want to minimize the following function: L = (y - 2)2 .
+
+In the 5 iterations we first calculate the value of L then update w1 and w2 with the formulae: w1 = w1 - (0.2) * 2(y-2) * x0 , w2 = w2 - (0.2) * 2(y-2) * x1 under the condition that this iteration's L value is smaller than previous iteration's L.
+
+End the loop if the L value in the current iteration is greater than its previous iteration's L value or after 5 iterations if L keeps decreasing. Calculate the value of L after running the above-mentioned algorithm of 5 iterations with the updated values of w1 and w2.
+
+Input Format:
+
+The first line consists of w0, w1, w2 values in integer format
+The next line consists of x0,x1 in integer format.
+Output Format:
+
+Print the value of L up to 2 places of decimal
+Sample Input:
+
+1 2 0
+2 0
+Sample Output:
+
+0.05
+Sample explanation:
+
+The values of L in continuous iterations are 9, 3.24, 1.17, 0.42, and 0.15. In the end, w1 and w2 got updated in the last iteration of loop and value of L comes out to be 0.05 using the updated values of w1 and w2.
+
+
+Solution:
+
+w0, w1, w2 = map(float, input().split(" "))
+x0, x1 = map(float, input().split(" "))
+y = w0 + w1 * x0 + w2 * x1
+l = 0
+prev = 1e18
+for i in range(5):
+  y = w0 + w1 * x0 + w2 * x1
+  l = (y-2)**2
+  if l>prev:
+    break
+  w1 = w1 - (0.2)* 2 *(y-2) * x0
+  w2 = w2 - (0.2)* 2 *(y-2) * x1
+  prev = l
+y = w0 + w1 * x0 + w2 * x1
+print(format((y-2)**2, ".2f"))
