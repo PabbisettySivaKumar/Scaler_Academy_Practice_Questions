@@ -1,0 +1,52 @@
+Problem Description:
+
+You have a dataset with n inputs. Each input contains 3 variables (x, z, w). You want to divide these inputs into 3 categories (A, B, and C).    
+This is decided on the basis of following process:
+
+Step1: Calculate y = 2 + 3*x + z**3 + (w mod 2)
+
+Step2:
+
+If y > 10: input belongs to class A
+
+If 0 < y <= 10 : input belongs to class B
+
+If y<=0: Input belongs to class C
+
+Your task is to find out the number of points belonging to each category and return the number of points in A,B and C
+Input Format:
+
+First, take n as input, and then the n inputs all in separate lines.
+Output Format:
+
+Print the no. of points in class A then B then C each separated by a space in a single line.
+Input:
+
+2
+
+3 1 4
+
+-5 1 1
+Output:
+
+1 0 1
+
+solution:
+
+def calc_class(x, z, w):
+    a = 0
+    b = 0
+    c = 0
+    
+    # YOUR CODE GOES HERE
+    
+    y = 2 + 3*x + z**3 + w%2
+    
+    if y>10:
+        a =a+1
+    elif y >0 and y<=10:
+        b = b+1
+    else:
+        c= c+1
+    
+    return a,b,c
