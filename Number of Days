@@ -1,0 +1,45 @@
+Number of Days
+
+
+Problem Description:
+
+Write a program to return the number of days in a specific month in a non-leap year. You are given the index of the month. Assume that this indexing starts from 1. For eg: 1 for January, 2 for February, ....so on till 12 for December.
+
+Input Format:
+
+The number of test cases. For each testcase there will be a single line of input with integer representing the index of month.
+
+Output Format:
+
+No.of Days in the respective month in integer format
+
+Sample Input:
+
+1
+12
+
+Sample Output:
+
+31
+Sample explanation:
+
+December has 31 days.
+
+
+Solution:
+
+
+def no_of_days(n):
+    '''n => it's the month index.
+       output => an integer for number of days in month at index n is expected.'''
+    
+    ans = None
+    # YOUR CODE GOES HERE
+    
+    if n ==4 or n==6 or n==9 or n==11:
+        ans =30
+    elif n ==1 or n==3 or n==5 or n==7 or n==8 or n==12 or n==10:
+        ans =31
+    else:
+        ans =28
+    return ans
