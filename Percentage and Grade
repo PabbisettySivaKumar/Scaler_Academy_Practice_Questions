@@ -1,0 +1,67 @@
+Percentage and Grade
+
+
+Problem Description:
+
+Write a program to calculate the percentage (according to marks of a student) and grade (according to the percentage of a student). Five numbers(A, B, C, D & E) represent the marks of a student in 5 subjects which are out of 100. Print the percentage and the grade of the student.
+
+If percentage >= 90% : Grade A
+If percentage >= 80% but <90 : Grade B
+If percentage >= 70% but <80: Grade C
+If percentage >= 60% but <70: Grade D
+If percentage >= 40% but <60: Grade E
+If percentage < 40%: Grade F
+NOTE: You have to take the lowest integer of the percentage. E.g. 90.8% will be treated as 90%.
+
+Input Format:
+
+There will be five lines of inputs as following:
+
+The five lines contain the 5 subject marks of the student in numerical format.
+Output Format:
+
+The first line indicates the percentage in integer format.  
+
+The next line displays the grade in string format.
+Sample Input:
+
+50   
+60   
+70   
+80   
+90
+Sample Output:
+
+70   
+C  
+
+
+Solution:
+
+
+def main():
+    m1 = int(input())
+    m2 = int(input())
+    m3 = int(input())
+    m4 = int(input())
+    m5 = int(input())
+    # m1,m2,m3,m4,m5 = marks of the five subjects
+    # Output: Print percentage and the grade
+    total = m1 + m2 + m3 + m4 + m5
+    per = int(total/5)
+    print(per)
+    if(per >= 90): 
+        print("A")
+    elif(per >= 80): 
+        print("B")
+    elif(per >= 70): 
+        print("C")
+    elif(per >= 60): 
+        print("D")
+    elif(per >= 40): 
+        print("E")
+    else : 
+        print("F")
+
+if __name__ == '__main__':
+    main()
