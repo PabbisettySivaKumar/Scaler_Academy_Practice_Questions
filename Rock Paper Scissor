@@ -1,0 +1,58 @@
+Rock Paper Scissor
+
+Problem Description:
+
+You are playing the Rock-Paper-Scissors game with your friend. 
+In this version of the game, you already know the first 3 moves of your opponent (given in the string). 
+You are also given a number n, (n<=3). You want to win the first n games and draw the rest. 
+The string contains “R” for rock, “S” for scissors and “P” for paper. 
+Return the string of your moves in the same format. You get 1 point for a win and 0 points for a draw.
+
+Input Format:
+
+First line has the number of test cases. For each testcase there will be two lines of inputs as follows:
+The first line input of the string
+The next line 'n' in integer format
+
+Output Format:
+
+The string of the moves in string format
+
+Sample Input:
+
+1
+RPS
+2
+
+Sample Output:
+
+PSS
+Sample Explanation:
+
+In the sample n=2, which implies that we want to win the first 2 moves. 
+The opponent's first move is "R", for which "P" will be a winning move therefore P is added at the first move in the output. 
+Similarly for the opponent's second move "P", "S" will be winning, therefore, S is added at the second place in the answer. 
+We don't need to consider the third move as we just wanted to win first two moves.
+
+Solution:
+
+def rock_paper_scissor(string,n):
+    ''' string => a string of length 3 representing 3 moves of the opponent
+        n => The numbers of first moves, for which we want to win the games.'''
+    ans = ""
+    # YOUR CODE GOES HERE
+
+    oppo_moves = string[:n]
+    victory =''
+
+    for i in oppo_moves:
+        if i =='R':
+            victory += 'P'
+        elif i == 'P':
+            victory += 'S'
+        else:
+            victory += 'R'
+
+    ans = victory + string[n:]
+    
+    return ans
