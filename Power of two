@@ -1,0 +1,40 @@
+Power of two.
+
+
+Problem Description:
+
+
+Write a program to find out if the given number n is a power of 2. Print “Yes” if true else “No”. Assume that 0 <= n <= 10^18
+
+
+Input:
+
+ 4
+Output:
+
+Yes
+Input:
+
+15
+Output:
+
+No
+
+
+Solution:
+
+
+def power():
+    x = int(input())
+    p = 1
+    ans="No"
+    
+    #YOUR CODE GOES HERE
+    ans = 'Yes'
+    while x!=1:
+        if x%2!=0:
+            ans ='No'
+        x =x//2
+    return ans
+
+print(power())
