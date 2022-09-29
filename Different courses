@@ -1,0 +1,42 @@
+Different courses
+
+
+Problem Description:
+
+Given a nested list that consists of different types of courses. Write a program using list comprehension that returns the courses names that have lengths of less than 5 in a flattened list.
+
+Input Format:
+
+The first line indicates the number of test cases. For each testcase the input is taken as following:
+The first line consist of n (integer) representing the number of rows/sublists.
+The next n lines consist of same number of space separated strings representing the elements in the rows.
+Output Format:
+
+The list that consists of courses with length less than 5.
+Sample Input:
+
+1
+python NLP DL
+Statistics Tableau ML
+AI Analytics SQL BigData'
+Sample Output:
+
+['NLP', 'DL', 'ML', 'AI', 'SQL']
+
+
+Solution:
+
+
+def course_5(courses):
+    ''' input:courses-nested list
+         output:return the flattened list of courses where length of each course name should be less than 5'''
+    
+    course=[]
+    #print(courses)
+    # YOUR CODE GOES HERE
+    for i in courses:
+        for j in i:
+            if len(j)<5:
+                course.append(j)
+    
+    return course
