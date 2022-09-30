@@ -1,0 +1,49 @@
+ Triangle Star- Pattern
+
+
+Problem Description:
+
+Write a function to print the pattern shown in the sample using n given as a parameter, where n defines the number of rows.
+
+Note: There isn't any space between consecutive stars.
+
+Input Format:
+
+The first line indicates the number of the test cases. For each testcase there will be only one line of input:
+The one line contains the n in integer format.
+Output Format:
+
+Triangle Star Pattern in string format for each testcase.
+
+
+Sample Input:
+
+1  
+5
+Sample Output:
+
+    *
+   ***
+  *****
+ *******
+*********
+
+
+Sample Explanation:
+
+The first row prints n-1 i.e. 
+4 spaces at the start and then 1 star. 
+The second row first prints (n-2=3) spaces and then 3 stars. 
+This updating of stars by 2 and spaces by -1 keeps happening until the last row where the space becomes zero.
+
+Solution:
+
+def star_pattern(n):
+    '''input: n = An Integer value defines number of rows
+       output: print triangle star pattern'''
+    # YOUR CODE GOES HERE
+    for i in range(n):
+        for j in range(n-(i+1)):
+            print(end=' ')
+        print('*'*(i+(i+1)),end='')
+        print()
