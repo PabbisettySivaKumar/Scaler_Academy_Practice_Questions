@@ -1,0 +1,60 @@
+Nearest 5 points
+
+
+You are planning to go to the 5 nearest tourist spots from your house. 
+So you start calculating the distance of all possible places from your house. 
+The 2d coordinates of the tourist spots are given in a list of tuples lis and the coordinates of your house are in the list pnt.
+
+Complete the function compute_Dist(lis,pnt) that returns a list of tuples consisting of the coordinates of the 5 nearest tourist spots.
+
+Input Format:
+
+The first line consists of two space-separated integers representing the coordinates of your house.
+The second line consists of an integer n representing the number of tourist spots for consideration.
+After the 2nd line, there will be n lines of input each line will have two space-separated integers representing the coordinates of the tourist spots.
+Output Format:
+
+A list of 5 tuples is simply printed
+Sample input:
+
+0 0
+6
+5 5
+1 1
+2 2
+3 3
+4 4
+6 6
+Sample output:
+
+[(1, 1), (2, 2), (3, 3), (4, 4), (5, 5)]
+Note: You can use Euclidean distance for the calculation of distances. 
+The returned order of coordinates in the list should be increasing in terms of distance from the house coordinates. 
+In case the distance is same for 2 points, the order should be same as obtained in the input.
+
+
+Solution:
+
+
+def compute_Dist(lis,pnt):
+    '''input: lis = list of tuples representing coordinates of tourist spots
+       output: a list of tuples of length 5 is expected to be returned.'''
+       
+    ans=[]
+    
+    #YOUR CODE GOES HERE
+
+    dists = []
+    x1,y1 = pnt
+
+    for pt in lis:
+        x2,y2 = pt
+        dists.append((x1-x2)**2 + (y1-y2)**2)
+    print(dists)
+
+    for i in range(5):
+        min_val = min(dists)
+        min_idx = dists.index(min_val)
+        dists[min_idx] = max(dists)+1
+        ans.append(lis[min_idx])
+    return ans
