@@ -1,0 +1,54 @@
+Accuracy Calculator
+
+
+Problem Description:
+
+We want to evaluate a standard machine learning classification model using accuracy. A classification model is a model which classifies a given observation or an event into a fixed set of categories. For instance, if we train a machine learning model to classify images of cats and dogs, for each image, the machine classifies the image with either a 'Cat' or a 'Dog'.
+
+Accuracy: The accuracy of the model is then defined as ((correctly predicted cats and dogs images)/(total cats and dogs images)*100).
+
+Complete the Python function calc_acc() to calculate the accuracy. It takes two lists as inputs, one list consists of actual_labels and predicted_labels and is expected to return the accuracy score, rounded off to the nearest integer.
+
+Sample Input:
+
+actual_labels = ['Dog','Dog','Cat','Cat','Cat']
+predicted_labels = ['Cat','Dog','Cat','Dog','Cat']
+Sample Output:
+
+The Accuracy score is: 60
+Sample Explanation: Using the formula (count of correctly predicted values )/ total values, we get the result of 60.
+
+
+Solution:
+
+
+def calc_acc(actual_labels, predicted_labels):
+    '''
+    input:
+    actual_labels -> list of actual labels of cats and dogs
+    predicted_labels -> list of the predicted values of the labels
+    
+    output:
+    acc -> the value of accuracy in float
+    '''
+    # Your Code Starts here
+    acc = 0
+    count =0
+    dog_cnt = 0
+    cat_cnt =0
+
+    for i in predicted_labels:
+        if i == 'Dog':
+            dog_cnt += 1
+        else:
+            cat_cnt += 1
+
+    for i in range(len(predicted_labels)):
+        if predicted_labels[i] == actual_labels[i]:
+            count += 1
+    #print(count)
+    acc = int(count/(dog_cnt + cat_cnt)*100)
+    
+    
+    # Your Code Ends here
+    return acc
