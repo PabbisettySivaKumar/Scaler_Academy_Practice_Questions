@@ -1,0 +1,54 @@
+Age from Dob
+
+
+Problem Description:
+
+Given a list having the date of birth of different people. Write a program that returns the age of the people in the list.
+
+Note: Age computation = Current year - Year of birth. Consider the current year to be 2022.
+
+Input Format:
+
+The first line indicates the number of test cases. There will be single line of input for each testcase as following:
+The single line consists of space-separated strings representing the elements of list i.e. date of births.
+Output Format:
+
+Ages in the integer format in a list.
+Sample Input:
+
+1
+04/07/2012 11/12/1995 08/17/2000 09/04/2004 02/29/2001 23/10/1998 03/11/1996 01/01/2016
+Sample Output:
+
+[10, 27, 22, 18, 21, 24, 26, 6]
+Sample explanation:
+
+The ages of people in the lists are [ 2022-2012, 2022 - 1995, 2022 - 2000, 2022 - 2004, 2022 - 2001, 2022 - 1998, 2022 - 1996, 2022 - 2016]
+
+
+Solution:
+
+
+def age(bdays):
+    ''' input:bdays-list of elements that contains different date fo births
+         output:return the age in the list'''
+    age=[]
+    # YOUR CODE GOES HERE
+    #print(bdays)
+    year = []
+    n=[]
+
+    for i in bdays:
+        n.append(i.split('/'))
+    
+    for j in n:
+        for k in j:
+            if len(k) ==4:
+                year.append(k)
+    
+    for l in year:
+        ages = 2022-int(l)
+        age.append(ages)
+    
+    
+    return age
