@@ -1,0 +1,47 @@
+Problem Description:
+
+Complete the function check_equal() to return whether the given two strings are the same or not if you are allowed to:
+
+Shift the first character of the second string, and
+Attach it to the end of the rightmost character of the second string itself,
+and this can be repeated as many times as required.
+The function should return 'Same' if the two strings using the above-mentioned shifting operations are the same; otherwise, it should return 'Not Same'.
+
+Sample input:
+
+abcde
+bcdea
+Sample output:
+
+Same
+Sample explanation:
+
+On shifting b, c, d, and e to the end of the 2nd string, we get abcde as the output, which is the same as the first string. Hence, Same is returned.
+
+
+Solution:
+
+
+def check_equal(str1, str2):
+    '''
+    input:
+    str1 -> the first input string
+    str2 -> the second input string
+    output:
+    res -> "Same" if both strings are same, or "Not Same"
+    '''
+    res = ""
+    
+    # Your code starts here
+    str3 = str2[-1] + str2[:len(str2)-1]
+    str4 = str1[-1] + str1[:len(str1)-1]
+    #print(str3)
+
+    if str1 == str3 or str2 == str4:
+        res = 'Same'
+    else:
+        res = 'Not Same'
+    
+    
+    # Your code ends here
+    return res
