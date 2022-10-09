@@ -1,0 +1,42 @@
+ Merge Sort:
+ 
+ 
+ class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+
+    def merge(self, A, B):
+        c = []
+        idxA=0
+        idxB=0
+        while idxA  != len(A) and idxB != len(B):
+            if A[idxA] > B[idxB]:
+                c.append(B[idxB])
+                idxB += 1
+            else:
+                c.append(A[idxA])
+                idxA +=1
+        if idxA == len(A):
+            while idxB < len(B):
+                c.append(B[idxB])
+                idxB += 1
+        else:
+            while idxA < len(A):
+                c.append(A[idxA])
+                idxA +=1
+        return c
+
+
+
+    def solve(self, A):
+        a =A
+
+        if len(a) == 1:
+            return a
+        else:
+            mid = len(a)//2
+            A = a[:mid]
+            B = a[mid:]
+            A_sorted = self.solve(A)
+            B_sorted = self.solve(B)
+            return self.merge(A_sorted, B_sorted)
