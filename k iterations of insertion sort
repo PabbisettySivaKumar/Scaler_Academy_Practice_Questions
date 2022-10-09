@@ -1,0 +1,57 @@
+ k iterations of insertion sort
+ 
+ 
+ Problem Description
+Given a list of numbers, perform k iterations of insertion sort on it and return the element present at the center.
+
+Note:
+For a list of length n, return the n//2th indexed element after applying k iterations of insertion sort.
+
+Input Format
+
+The first line contains space separated values of Integers, arr
+The value of k
+
+
+Output Format
+
+The element at center after k iterations of insertion sort.
+
+
+Example Input
+
+12 11 13 5 6
+2
+
+
+Example Output
+
+13
+
+
+Example Explanation
+The list after 2 iterations of insertion sort becomes [11, 12, 13, 5, 6]. So the central element is 13.
+
+
+Solution:
+
+
+def insertionSort(arr,k):
+    """
+    arr is the list and k is the iteration number
+    store the result with variable name res
+    """
+    #YOUR CODE GOES HERE
+    for i in range(1,k+1):
+        ins_to_sort = i
+        j = i-1
+        while(j>=0):
+            if(arr[j] < arr[ins_to_sort]):
+                break
+            else:
+                arr[j],arr[ins_to_sort] = arr[ins_to_sort],arr[j]
+                ins_to_sort = j
+                j-=1
+    res = arr[len(arr)//2]
+   
+    return res
