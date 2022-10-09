@@ -1,0 +1,45 @@
+Multiplication_Table
+
+
+Problem Description
+
+For a given number A, print its multiplication table having the first 10 multiples.
+
+Input Format:
+
+The first line indicates the number of the test cases t.
+The next t lines contain a single integer A for each testcase.
+Output Format:
+
+10 lines for each testcase, an ith line containing ith multiple.
+Sample Input:
+
+1
+2
+Sample Output:
+
+ 2 * 1 = 2 
+ 2 * 2 = 4 
+ 2 * 3 = 6 
+ 2 * 4 = 8 
+ 2 * 5 = 10 
+ 2 * 6 = 12 
+ 2 * 7 = 14 
+ 2 * 8 = 16 
+ 2 * 9 = 18 
+ 2 * 10 = 20 
+
+
+Solution:
+
+
+def multiple_table(a):
+    '''input: a = integer which multiplication table need to be printed
+       output: a multiplication table of length 10 is expected to be printed.'''
+       
+       
+    #YOUR CODE GOES HERE
+    for i in range(1,11):
+        print(a ,'*', i ,'=' ,a*i)
+    
+    return None
