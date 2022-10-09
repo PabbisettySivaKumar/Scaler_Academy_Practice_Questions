@@ -1,0 +1,50 @@
+first and last element
+
+
+Problem Description
+Given an unsorted list of n integers, return the sum of the first and last elements after implementing bubble sort on the first k elements to arrange them in increasing order.
+
+Input Format
+
+Space separated values for Integers, arr
+
+
+Output Format
+
+The required sum
+
+
+Example Input
+
+64 34 25 12 22 11 90
+
+
+Example Output
+
+102
+
+
+Example Explanation
+The list after implementing bubble sort on first 4 elements, becomes [12, 25, 34, 64, 22, 11, 90].
+So the sum of the first and last element becomes 12+90 = 102.
+
+
+Solution:
+
+
+def bubbleSort(arr,k):
+    """
+    argument arr is list, k is int
+    store result in res
+    """
+    
+    res=0
+    #YOUR CODE GOES HERE
+    for i in range(k):
+        for j in range(i+1,k):
+            if arr[i] >arr[j]:
+                arr[i], arr[j] = arr[j],arr[i]
+    res = arr[0] + arr[-1]
+
+    
+    return res
