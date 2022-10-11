@@ -1,0 +1,37 @@
+lexicographical selection sort
+
+
+Given a list of strings, use selection sort to sort these strings in lexicographical order.
+
+Input Format:
+
+space-separated strings 
+Output Format:
+
+list of strings 
+Sample Input:
+
+['alpha', 'gamma', 'beta', 'delta'] 
+Sample Output:
+
+['alpha', 'beta', 'delta', 'gamma']
+Sample explanation:
+
+alpha is lexicographically smallest as it starts with 'a' and gamma is lexicographically largest as its initial character is 'g'.
+
+
+Solution:
+
+
+def selectionSort(lis):
+    for i in range(len(lis)):
+        min_index = i
+        min_str = lis[i]
+        for j in range(i+1,len(lis)):
+            if min_str>lis[j]:
+                min_str = lis[j]
+                min_index = j
+        temp = lis[i]
+        lis[i] = lis[min_index]
+        lis[min_index] = temp
+    return lis
