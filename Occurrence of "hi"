@@ -1,0 +1,48 @@
+Occurrence of "hi"
+
+
+Problem Description:
+
+Write a recursive function that returns the number of occurrences of "hi" in the string passed as a parameter to the function.
+
+Input Format:
+
+The function has two arguments count which is 0 by default and represents the count of "hi" in s.
+The second argument to this function is s.
+Output Format:
+
+Return the count of 'hi' occurrences in the string in integer format for each testcase.
+Sample Input:
+
+'hishisha'
+Sample Output:
+
+2
+Sample explanation:
+
+'hi' occurs at index [0,1] and [3,4] in the string 'hishisha' therefore 2 is returned.
+
+
+Solution:
+
+
+def countHi(s, count=0):
+    ''' s-indicates the string,
+         output:Return the count of occurrences of "hi" in s'''
+    
+    # YOUR CODE GOES HERE
+    len_s = len(s)
+    len_substr = len('hi')
+
+    if len_s == 0:
+        return count
+   
+    if len_s < len_substr:
+        return count
+
+    if 'hi' == s[0:len_substr]:
+        count += 1
+   
+    count = countHi(s[1:],count)
+
+    return count
