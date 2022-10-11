@@ -1,0 +1,46 @@
+Series sum
+
+
+Problem Description:
+
+Write a program to calculate the sum of the positive integers of the series n + (n-2) + (n-4)..... (until n-x ≥ 0).
+
+Input Format:
+
+The first line indicates the number of test cases. For each test case there will be one line of input as explained following:
+The one line contains n in integer format.
+Output Format:
+
+Series sum in integer format should be returned.
+Sample Input:
+
+1
+10
+Sample Output:
+
+30
+Sample Explanation:
+
+As 10 + (10-2) + (10-4) + (10-6) + (10-8) + (10-10) = 10 + 8 + 6 + 4 + 2 = 30, 30 is returned as the series sum for n=10.
+
+
+Solution:
+
+
+def sum_series(n):
+    '''n = Input in integer format
+       output:return sum of the series'''
+    # YOUR CODE GOES HERE
+    
+    if n%2==0:
+        if n<2:
+            return 0
+        else:
+            return n+sum_series(n-2)
+    else:
+        if n<=1:
+            return 1
+        else:
+            return n+sum_series(n-2)
+
+    return None
