@@ -1,0 +1,41 @@
+Harmonic sum
+
+
+Problem Description:
+
+Write a recursive program to calculate the harmonic sum of the first n numbers.
+
+Note: The harmonic sum is the sum of reciprocals of the positive integers. (Round the sum to 3 decimal places)
+
+
+1+1/2+1/3+1/4+.....
+
+
+Input Format:
+
+The first line indicates the number of the test cases. For each testcase there will be one line of input as explained following:
+The one line inputs contains n in integer format.
+Output Format:
+
+Harmonic Sum in float format is returned.
+Sample Input:
+
+1
+7
+Sample Output:
+
+2.593
+
+
+Solution:
+
+
+def harmonic_sum(n):
+    '''n = Input in integer format
+       output:return harmonic sum'''
+    # YOUR CODE GOES HERE
+
+    if n<2:
+        return 1
+    else:
+        return round(1/n+harmonic_sum(n-1),3)
