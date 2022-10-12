@@ -1,0 +1,41 @@
+Reverse a number
+
+
+Problem Description:
+
+Write a recursive function to return the reverse of a given number passed as an argument.
+
+Input Format:
+
+The function will have two arguments.
+The first argument is the number n that is to be reversed.
+The second argument is a string temp which is empty by default.
+Output Format:
+
+Return the number in reverse order in the string format.
+Sample Input:
+
+123
+100
+Sample Output:
+
+321
+001
+Note: Trailing zeroes in the original number should be included in the front of reversed answer.
+
+
+Solution:
+
+
+def rev(n, temp=''):
+    ''' n-indicates the number to be reversed,
+         output:Return the number in reversed order in the string format'''
+    
+    # YOUR CODE GOES HERE
+
+    if n==0:
+        return temp
+    lst = n%10
+    n=n//10
+    temp += str(lst)
+    return rev(n,temp)
