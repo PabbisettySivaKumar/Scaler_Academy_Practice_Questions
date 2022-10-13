@@ -1,0 +1,39 @@
+Find GCD
+
+
+Problem Description:
+
+Write a program to find the Greatest common divisor of given 2 numbers.
+
+Input Format:
+
+There will be one line of input that consists  of two space separated numbers in integer format.
+Output Format:
+
+Print the greatest coomon divisor in integer format.
+Sample Input:
+
+2 4
+Sample Output:
+
+2
+Sample explanation:
+
+The highest common divisor of 2 and 4 is 2.
+
+Solution:
+
+
+a, b = map(int, input().split(" "))
+#a and b will simply be two integers use them for the calculation.
+
+#YOUR CODE GOES HERE
+
+if a>b:
+    temp =b
+else:
+    temp =a
+    for i in range(1, temp+1):
+        if a%i ==0 and b%i ==0:
+            gcd = i 
+print(gcd)
