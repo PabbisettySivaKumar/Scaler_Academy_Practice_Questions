@@ -1,0 +1,40 @@
+Palindromes Quest
+
+
+Problem Description:
+
+Write a program to find out the total number of palindromic integers within the given range [l, r] inclusive of both l and r.
+
+Input Format:
+
+l and r are given in the format of space separated integers
+Output Format:
+
+The total number of palindromic intgers in integer format is printed in range l and r
+Sample Input:
+
+0 15
+Sample Output:
+
+11
+Sample explanation:
+
+The palindromes between 0 and 15 are 0, 1, 2, 3, 4....9, 11 which are 11 in total number.
+
+
+Solution:
+
+
+l, r = map(int, input().split(" "))
+#l and r represents the upper and lower boundary for the range
+#print the total number of palindromic integers
+
+ans = 0
+
+#YOUR CODE GOES HERE
+
+for i in range(l,r):
+    i = str(i)
+    if i == i[::-1]:
+        ans = ans+1
+print(ans)
