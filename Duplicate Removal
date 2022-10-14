@@ -1,0 +1,48 @@
+Duplicate Removal
+
+
+Problem Description
+
+Given a string S, print the string with the repeating words appearing only once in the same order as the original string.
+
+
+Input Format
+
+Number of Test Cases 
+// For each case 
+String S
+
+
+Output Format
+
+The required string
+
+
+Example Input
+
+2 
+Python is great but Java is also great and also C++. 
+I am fine and I am good
+
+
+Example Output
+
+Python is great but Java also and C++ 
+I am fine and good
+
+
+Solution:
+
+
+def removeDuplicates(S):
+
+  l = S.split()
+
+  k = []
+
+  for i in l:
+    if (s.count(i)>=1 and (i not in k)):
+
+        k.append(i)
+
+  print(' '.join(k))
