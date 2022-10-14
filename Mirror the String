@@ -1,0 +1,58 @@
+Mirror the String
+
+
+Problem Description
+
+Given a string and a number K, we need to mirror the characters from the start to the K-th position up to the length of the string in alphabetical order. In mirror operation, we change ‘a’ to ‘z’, ‘b’ to ‘y’, and so on.
+
+
+Input Format
+
+Number of Test Cases
+// For each case
+String S 
+The value of K
+
+
+Output Format
+
+Mirrored String for each case
+
+
+Example Input
+
+2
+hashing
+3
+studying
+2
+
+
+Example Output
+
+hashrmt
+stuwbrmt
+
+
+Solution:
+
+
+def mirrorChars(S,k):
+
+  original = 'abcdefghijklmnopqrstuvwxyz'
+
+  reverse = 'zyxwvutsrqponmlkjihgfedcba'
+
+  dictChars = dict(zip(original,reverse))
+
+  prefix = S[0:k+1]
+
+  suffix = S[k+1:]
+
+  mirror = ''
+
+  for i in range(0,len(suffix)):
+
+    mirror = mirror + dictChars[suffix[i]]
+
+  print (prefix+mirror)
