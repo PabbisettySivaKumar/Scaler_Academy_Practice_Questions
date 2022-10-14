@@ -1,0 +1,79 @@
+Restructure Information
+
+
+Problem Description
+
+You are given 3 lists: name, jobrole and salary containing various employee information.
+
+name = [“Alex”, “Adam”,”Michael”,”Sergei”]
+
+job_role = [“Data Analyst”,”Data Scientist”,”HR”,”Manager”]
+
+salary = [50000,60000,55000,70000]
+
+Complete the python function to return the maximum salary along with the information in a nested dictionary format:
+maximum salary = 70000
+info = {“Alex”:{role:”Data Analyst”,salary:50000},“Adam”:{role:”Data Scientist”,salary:60000}, “Michael”:{role:”HR”,salary:55000}, “Sergei”:role:”Manager”,salary:70000}}
+
+
+Input Format
+
+Space separated values for names
+Space separated values for job_role
+Space separated values for salary
+
+
+Output Format
+
+Integer representing highest salary
+A dictionary containing information
+
+
+Example Input
+
+Alex Adam Michael Sergei
+Data_Analyst Data_Scientist HR Manager
+50000 60000 55000 70000
+
+
+Example Output
+
+70000
+{'Alex': {'role': 'Data_Analyst', 'salary': 50000}, 'Adam': {'role': 'Data_Scientist', 'salary': 60000}, 'Michael': {'role': 'HR', 'salary': 55000}, 'Sergei': {'role': 'Manager', 'salary': 70000}}
+Platform Output:
+
+The platform does some post-processing on your output and converts it to something easy to check with test cases.
+In this case, Platform output will contain True if the dictionary is correct, and False if it is incorrect.
+For example, for the above test case, the platform output will be:
+70000
+True
+
+
+Solution:
+
+
+def information(name,job_role,salary):
+    # name -> List with all employee names
+    # job_role -> List with employee job roles
+    # salary -> List with employee salaries
+
+    #return the required format of information
+    # code starts here
+
+    info = {}
+
+
+
+    for i in range(len(name)):
+
+        inter_dict = {}
+        inter_dict.update(role=job_role[i],salary=salary[i])
+        info[name[i]] = inter_dict
+
+    max_sal = -1
+    for k in info.keys():
+        max_sal = max(max_sal, info[k]['salary'])
+
+
+    return max_sal, info
+    #code ends here
