@@ -1,0 +1,54 @@
+Total electricity bill
+
+
+Problem Describtion:
+Create a class Bill and initialize it with the details: previous and current meter readings. 
+Create a function total_bill() inside the Bill class which returns the total bill based on the following criteria:
+
+1. For the first 100 units consumed: 3.5 rs/unit
+
+2. For the next 100 units consumed: 5 rs/unit
+
+3. For remaining units consumed: 8 rs/unit
+
+4. Meter Charges: 150 rs (It's included only once but is mandatory)
+
+Example input:
+
+200 650
+Example output:
+
+3000.0
+Example explanation:
+
+previous_read= 200
+current_read= 650
+Unit_consumed= 650-200 = 450
+total_bill = 100*3.5 + 100*5 + 250*8 + 150(meter charges)= 3000.0 (output will be float)
+
+
+Solution:
+
+
+class Bill():
+
+    def __init__(self, prev_read, cur_read):
+        #YOUR CODE GOESS HERE
+        self.prev_read = prev_read
+        self.cur_read = cur_read
+        
+        
+        
+    def total_bill(self):
+        total=0.0
+        unit_consumed = self.cur_read - self.prev_read
+        if unit_consumed<=100:
+            total = unit_consumed * 3.5+150
+        elif unit_consumed <=200:
+            total = 100*3.5 +(unit_consumed-100)*5+150
+        else:
+            total = 100*3.5 + (200 - 100)*5 + (unit_consumed-200)*8+150
+
+        #YOUR CODE GOESS HERE
+        
+        return total
