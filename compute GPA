@@ -1,0 +1,65 @@
+compute GPA
+
+
+Problem Description:
+
+
+Create a class Student and initialize it with details marks in subject 1, credit of subject 1, marks in subject 2, and credit of subject 2.
+
+Create a function grade_point_average() for the Student class which computes the GPA rounded to two decimals, based on the following criteria of points in a subject :
+
+1. If marks>=90:10 points
+2. If 90>marks>=75: 9 points
+3. If 75>marks>=60: 8 points
+4. If 60>marks>=45: 7 points
+5. If marks<45: 0 points
+
+GPA = (points in subject 1 * credit of subject 1+ points in subject 2 * credit of subject 2) / ( credit of subject 1 + credit of subject 2)
+
+The points in a subject should be calculated according to the criteria mentioned in the question.
+Also, implement a special zero case to handle when credits of both subjects are 0, return "Zero credits for both subjects".
+
+Input Example:
+
+# class Student takes (marks1,marks2,credits1,credits2)
+(85, 76, 3, 4)
+Output Example:
+
+#output is GPA value
+9.0
+
+
+Solution:
+
+
+class Student:
+
+    def __init__(self, marks1, marks2, credits1, credits2):
+    
+        self.marks1= marks1
+        self.marks2= marks2
+        
+        self.credits1= credits1
+        self.credits2= credits2
+    def points(self, marks):
+    
+        if marks in range(90,100):
+          return 10
+        elif marks in range(75,90):
+          return 9
+        elif marks in range(60,75):
+          return 8
+        elif  marks in range(45,60):
+          return 7
+        else:
+          return 0
+    def grade_point_average(self):
+    
+        if self.credits1!=0 and self.credits2!=0:
+          
+          gpa= ((self.points(self.marks1)*self.credits1) + self.points(self.marks2)*self.credits2) / (self.credits1 + self.credits2) 
+          
+          return round(gpa,2)
+    
+        else:
+          return "Zero credits for both subjects"
