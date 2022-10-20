@@ -8,6 +8,7 @@ Display the details of the employees who work in departments 50,10, or 80 and wh
 Return the columns 'employee_id', 'first_name', 'last_name', 'salary'.
 Use the employees table.
 Dataset Description:
+https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/004/944/original/hr_img.PNG?1653046505
 
 
 Solution:
