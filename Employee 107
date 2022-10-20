@@ -8,6 +8,7 @@ Find the employee's details who work in the same job as the employee with employ
 Return the columns (first name, last name separated by space) as 'full_name', 'salary', 'department_id', 'job_id'.
 Use the employees table.
 Dataset Description:
+https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/004/944/original/hr_img.PNG?1653046505
 
 
 Solution:
