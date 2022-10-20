@@ -1,0 +1,20 @@
+Letter 'n'
+
+
+Problem Description:
+
+Find all the employees whose first name ends with the letter 'n'.
+
+Return the columns 'employee_id', 'full_name' (first name and last name separated by space), and 'phone_number'.
+Use the employees table.
+Dataset Description:
+
+https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/004/944/original/hr_img.PNG?1653046505
+
+
+Solution:
+
+
+SELECT employee_id, concat(first_name, ' ', last_name) as full_name, phone_number
+FROM employees
+where first_name like '%n'
