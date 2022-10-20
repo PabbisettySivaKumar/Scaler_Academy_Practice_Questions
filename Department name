@@ -1,0 +1,24 @@
+Department name
+
+
+Problem Description:
+
+Find the details of the employees who are working in the departments 'Administration', 'Marketing', and 'Human Resources'.
+
+Return the columns 'employee_id', 'full_name'(first and last name separated by space), and 'salary'.
+Use the tables employees, and departments .
+Dataset Description:
+
+https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/004/944/original/hr_img.PNG?1653046505
+
+NOTE: The department_name column is present in the department's table.
+
+
+Solution:
+
+
+SELECT employee_id, concat(first_name, ' ', last_name) as full_name, salary
+FROM employees
+where department_id in (SELECT department_id
+                        FROM departments
+                        where department_name in ('Administration','Marketing','Human Resources'))
