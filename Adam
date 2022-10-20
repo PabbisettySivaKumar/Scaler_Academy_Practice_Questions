@@ -1,0 +1,23 @@
+Adam
+
+
+Problem Statement:
+
+Write a query to display the employee details who report to Adam. The reporting structure can be inferred from the manager_id column in the employee's table.
+
+Return the columns 'employee_id', 'full_name'(first name and last name separated by space), 'salary'.
+NOTE:
+
+Use the employees table.
+The manager_id in the employees table is the employee_id of the manager.
+Dataset Description:
+
+
+Solution:
+
+
+SELECT employee_id, CONCAT(first_name, ' ', last_name) as full_name, salary
+FROM employees
+where manager_id = (SELECT employee_id 
+                    FROM employees 
+                    where first_name = 'Adam')
