@@ -1,0 +1,21 @@
+Not working employee
+
+
+Problem Description:
+
+Find the details of employees who are not working in any department.
+
+Return the columns 'employee_id','first_name', 'last_name','job_id', and 'manager_id'.
+NOTE:
+
+The missing value in the department_id column in the employees table refers to not working in any department.
+Use the table employees.
+Dataset Description:
+
+
+Solution:
+
+
+select employee_id,first_name, last_name,job_id,manager_id 
+from employees 
+where department_id is null;
