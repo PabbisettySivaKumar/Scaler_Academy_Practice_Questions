@@ -1,0 +1,18 @@
+ Salary(5000-10000)
+ 
+ 
+ Problem Statement:
+
+Display the details of the employees who work in departments 50,10, or 80 and whose salary is between 5000 to 10000 and also where employees have no commission_pct(commission percentage).
+
+Return the columns 'employee_id', 'first_name', 'last_name', 'salary'.
+Use the employees table.
+Dataset Description:
+
+
+Solution:
+
+
+SELECT employee_id, first_name, last_name, salary
+FROM employees
+where department_id in(50,10,80) and salary between 5000 and 10000 and commission_pct is null
